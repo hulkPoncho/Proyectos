@@ -1,0 +1,8 @@
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\bin\Debug\Consulta.exe.config
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\bin\Debug\Consulta.exe
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\bin\Debug\Consulta.pdb
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\obj\Debug\Consulta.csproj.AssemblyReference.cache
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\obj\Debug\Consulta.csproj.SuggestedBindingRedirects.cache
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\obj\Debug\Consulta.csproj.CoreCompileInputs.cache
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\obj\Debug\Consulta.exe
+D:\UDEMY_INSTRUCTOR\Estadistica\Consulta\obj\Debug\Consulta.pdb
