@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.ActionLink("Descargar XLS", "DownloadExcel", "Home")
+<!--<a href="/Movie/List">Movie list</a>-->
+<h1 class="text-center">Ejercicio con selectores dependientes</h1>
+<form class="form-horizontal">
+    <div class="well">
+        <div class="form-group">
+            <label class="col-xs-3 control-label"><strong>Entidad Federativa</strong></label>
+            <div class="col-xs-9">
+                <select class="form-control" onchange="ActualizaMunicipios()" id="selectEstados" style="max-width:100%"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-3 control-label"><strong>Municipio</strong></label>
+            <div class="col-xs-9">
+                <select class="form-control" onchange="ActualizaLocalidades()" id="selectMunicipios" style="max-width:100%"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-3 control-label"><strong>Localidad</strong></label>
+            <div class="col-xs-9">
+                <select class="form-control" id="selectLocalidades" style="max-width:100%"></select>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block mb-4" onclick="PresentaDetalle()">Buscar</button>
+        <a class="btn btn-success btn-block mb-4" id="DescargaXLS" href="@TempData["Ruta_NPOI"]">
+            <i class="fas fa-file-excel"></i>&nbsp;Descarga XLS</a>
+    </div>
+</form>
+
+<div id="DetalleInformacion"></div>
+
+<script type="text/javascript">
+
+    var url = JSON.parse('@Html.Raw(Json.Encode(TempData["Ruta_XLS"]))');
+
+    $(document).ready(function () {
+        cargaEntidades();
+        cargaMunicipios();
+        cargaLocalidades();
+        ConfiguraDescargaURL();
+    });
+
+</script>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocalidadesModelStoreContainer" CdmEntityContainer="LocalidadesEntities">
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="LocalidadesModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="estadoId" ColumnName="estadoId" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="abrev" ColumnName="abrev" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localidad">
+      <EntityTypeMapping TypeName="LocalidadesModel.Localidad">
+        <MappingFragment StoreEntitySet="Localidad">
+          <ScalarProperty Name="localidadId" ColumnName="localidadId" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="latitud" ColumnName="latitud" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+          <ScalarProperty Name="altitud" ColumnName="altitud" />
+          <ScalarProperty Name="cve_carta" ColumnName="cve_carta" />
+          <ScalarProperty Name="ambito" ColumnName="ambito" />
+          <ScalarProperty Name="pobTotal" ColumnName="pobTotal" />
+          <ScalarProperty Name="pobMasculina" ColumnName="pobMasculina" />
+          <ScalarProperty Name="pobFemenina" ColumnName="pobFemenina" />
+          <ScalarProperty Name="totalViviendas" ColumnName="totalViviendas" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipio">
+      <EntityTypeMapping TypeName="LocalidadesModel.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="estadoId" ColumnName="estadoId" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

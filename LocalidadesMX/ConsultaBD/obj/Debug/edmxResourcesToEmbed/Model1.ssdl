@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalidadesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="estadoId" />
+    </Key>
+    <Property Name="estadoId" Type="int" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="abrev" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="activo" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Localidad">
+    <Key>
+      <PropertyRef Name="localidadId" />
+    </Key>
+    <Property Name="localidadId" Type="int" Nullable="false" />
+    <Property Name="municipioId" Type="int" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="latitud" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="longitud" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="altitud" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="cve_carta" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ambito" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="pobTotal" Type="int" Nullable="false" />
+    <Property Name="pobMasculina" Type="int" Nullable="false" />
+    <Property Name="pobFemenina" Type="int" Nullable="false" />
+    <Property Name="totalViviendas" Type="int" Nullable="false" />
+    <Property Name="lat" Type="decimal" Precision="10" Scale="7" />
+    <Property Name="lng" Type="decimal" Precision="10" Scale="7" />
+    <Property Name="activo" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="municipioId" />
+    </Key>
+    <Property Name="municipioId" Type="int" Nullable="false" />
+    <Property Name="estadoId" Type="int" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="activo" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__localidad_municipio">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="Localidad" Type="Self.Localidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="municipioId" />
+      </Principal>
+      <Dependent Role="Localidad">
+        <PropertyRef Name="municipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__municipio__estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="estadoId" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="estadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LocalidadesModelStoreContainer">
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Localidad" EntityType="Self.Localidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__localidad_municipio" Association="Self.FK__localidad_municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Localidad" EntitySet="Localidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__municipio__estado" Association="Self.FK__municipio__estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\ConsultaBD.dll.config
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\ConsultaBD.dll
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\ConsultaBD.pdb
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\EntityFramework.dll
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\EntityFramework.SqlServer.dll
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\EntityFramework.xml
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\bin\Debug\EntityFramework.SqlServer.xml
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\obj\Debug\ConsultaBD.csproj.CoreCompileInputs.cache
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\obj\Debug\ConsultaBD.csproj.CopyComplete
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\obj\Debug\ConsultaBD.dll
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\obj\Debug\ConsultaBD.pdb
+D:\UDEMY_INSTRUCTOR\Nuevo\ConsultaBD\obj\Debug\ConsultaBD.csproj.AssemblyReference.cache
