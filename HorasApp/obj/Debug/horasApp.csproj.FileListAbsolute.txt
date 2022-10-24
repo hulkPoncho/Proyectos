@@ -1,0 +1,6 @@
+C:\Users\flord\source\repos\horasApp\bin\Debug\horasApp.exe.config
+C:\Users\flord\source\repos\horasApp\bin\Debug\horasApp.exe
+C:\Users\flord\source\repos\horasApp\bin\Debug\horasApp.pdb
+C:\Users\flord\source\repos\horasApp\obj\Debug\horasApp.csproj.CoreCompileInputs.cache
+C:\Users\flord\source\repos\horasApp\obj\Debug\horasApp.exe
+C:\Users\flord\source\repos\horasApp\obj\Debug\horasApp.pdb
