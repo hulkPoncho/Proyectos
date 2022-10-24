@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "A4Gg753AnwbfiEFxBfE7sMMpw8mi9y3FSHNXDDP7cAPpbBPOsNw9WaQte31TDE6FS5fGyUPhCwS9h/l4NKmpjg==",
+  "success": true,
+  "projectFilePath": "D:\\UDEMY_INSTRUCTOR\\Graficas\\GraficasAPI\\GraficasAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\flord\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\flord\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\flord\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\flord\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\flord\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\flord\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

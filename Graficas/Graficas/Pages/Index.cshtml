@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script type="text/javascript">
+
+var xValues = null;
+var yValues = null;
+var barColors = null;
+
+
+$(document).ready(function() {
+    consultaInformacion()
+    renderizado();
+});
+
+function consultaInformacion() {
+        $.ajax({
+        type: 'GET',
+        url: 'http://localhost:5277/WeatherForecast/getInformacion',
+        async: false,
+        cache: false,
+        success: function (resultado) {
+            xValues = resultado.xValues;
+            yValues = resultado.yValues;
+            barColors = resultado.barColors;
+        }
+        });
+}
+
+function renderizado() {
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "World Wide Wine Production 2018"
+        }
+      }
+    });
+}
+</script>
