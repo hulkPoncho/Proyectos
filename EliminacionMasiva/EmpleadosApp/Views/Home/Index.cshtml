@@ -1,0 +1,72 @@
+﻿<br>
+<div class="card">
+	<div class="card-header">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Lista de empleados</h3>
+			</div>
+			<div class="col-sm-3">
+				<select class="form-control" onchange="cambioSelector()" id="selectorOpciones">
+					<option value="-1">Eliminar</option>
+					<option value="0">Desactivar</option>
+					<option value="1">Activar</option>
+				</select>
+			</div>
+			<div class="col-sm-3">
+				<button onclick="aplicarAccion()" 
+					class="btn btn-danger btn-sm" id="botonOpciones" disabled>
+					Aplicar
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="card-body" id="tablaResultados"></div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+    cambioSelector();
+    configuraOpciones();
+});
+
+function cambioSelector() {
+	$("#botonOpciones").attr("disabled", "disabled");
+    var valor = $("#selectorOpciones").val();
+    var modelo = { Seleccion: valor };
+    cargaEmpleados(modelo);
+}
+
+function cargaEmpleados(modelo) {
+	EnvioGenerico("/Home/Lista", modelo, "tablaResultados");
+}
+
+function configuraOpciones(){
+    var conteo = $('.inputCheckEmpleado').filter(':checked').length;
+	if (conteo > 0) {
+		$("#botonOpciones").removeAttr('disabled');
+    }
+    else {
+        $("#botonOpciones").attr("disabled", "disabled");
+	}
+
+}
+
+function aplicarAccion() {
+	/*var elementosSeleccionados = "";
+	$('.inputCheckEmpleado:checked').each(function () {
+		elementosSeleccionados += elementosSeleccionados==""?$(this).attr("id"):","+$(this).attr("id");
+	});*/
+
+	var elementosSeleccionados = $('.inputCheckEmpleado:checked').map(function(){
+						return $(this).attr("id");
+					}).get().join(",");
+
+    var modelo = {
+		ids:elementosSeleccionados,
+		seleccion:$("#selectorOpciones").val()
+	}
+	EnvioGenerico("/Home/Actualizacion", modelo, cambioSelector);
+}
+
+</script>

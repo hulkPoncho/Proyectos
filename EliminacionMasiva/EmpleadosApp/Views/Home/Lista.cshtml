@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EmpleadosApp.Transporte.EmpleadoDTO>
+
+	@if (Model!=null && Model.Count() > 0)
+{
+	<table class="table table-striped border">
+		<tr class="table-secondary">
+			<th>@Html.DisplayNameFor(m=>m.First().EmpleadoId)</th>
+			<th>@Html.DisplayNameFor(m=>m.First().Nombre)</th>
+			<th>@Html.DisplayNameFor(m=>m.First().EsActivo)</th>
+			<th><center>Marcar</center></th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@Html.DisplayFor(m=>item.EmpleadoId)</td>
+				<td>@Html.DisplayFor(m=>item.Nombre)</td>
+				<td>@(item.EsActivo==true?"Si":"No")</td>
+				<td>
+					<center><input type="checkbox" onclick="configuraOpciones()" 
+						class="inputCheckEmpleado" id="@item.EmpleadoId"></center>
+				</td>
+			</tr>
+		}
+	</table>
+}
+else
+{
+	<p>No hay empleados</p>
+}
