@@ -1,5 +1,4 @@
-﻿using Inyeccion.Validaciones;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,15 +24,15 @@ namespace Inyeccion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var userName = textUserName.Text;
+            var userName = textUsr.Text;
             var pwd = textPwd.Text;
             var validacion = new LoginValidateEntity();
-            var resultado = validacion.ValidacionCredencialesCount(userName, pwd);
+            var resultado=validacion.ValidacionCredencialesCount(userName, pwd);
             if (resultado)
             {
                 MessageBox.Show("Estas dentro", "Login exitoso",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
             }
             else
             {
