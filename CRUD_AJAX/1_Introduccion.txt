@@ -1,0 +1,10 @@
+Instalar preferentemente en el siguiente orden:
+
+1 Instalación SQL Server
+https://www.youtube.com/watch?v=c9BNg_kD75w&list=PLQvEohhNxfbwmDlWObClQHExZwbTSHEn5&index=1&t=5s
+
+2 Instalación SQL Server Management Studio (SSMS)
+https://www.youtube.com/watch?v=KbixwKIlIt0&list=PLQvEohhNxfbwmDlWObClQHExZwbTSHEn5&index=2
+
+3 Instalación Visual Studio 2022
+https://www.youtube.com/watch?v=di2X9bknZlo&list=PLQvEohhNxfbzgemH1Tagv8Rp7aIVSHOCx&index=4&t=11s

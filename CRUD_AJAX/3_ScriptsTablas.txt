@@ -1,0 +1,52 @@
+USE [Cursos]
+GO
+
+CREATE TABLE [dbo].[Curso](
+	[CursoId] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+	[Descripcion] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Curso] PRIMARY KEY CLUSTERED 
+(
+	[CursoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Profesor](
+	[ProfesorId] [int] IDENTITY(1,1) NOT NULL,
+	[Nombres] [varchar](100) NOT NULL,
+	[Apellidos] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_Profesor] PRIMARY KEY CLUSTERED 
+(
+	[ProfesorId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[CursoProfesor](
+	[CursoProfesorId] [int] IDENTITY(1,1) NOT NULL,
+	[CursoId] [int] NOT NULL,
+	[ProfesorId] [int] NOT NULL,
+	[FechaRegistro] [datetime] NULL,
+ CONSTRAINT [PK_CursoProfesor] PRIMARY KEY CLUSTERED 
+(
+	[CursoProfesorId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[CursoProfesor]  WITH CHECK ADD  CONSTRAINT [FK_CursoProfesor_Curso] FOREIGN KEY([CursoId])
+REFERENCES [dbo].[Curso] ([CursoId])
+GO
+
+ALTER TABLE [dbo].[CursoProfesor] CHECK CONSTRAINT [FK_CursoProfesor_Curso]
+GO
+
+ALTER TABLE [dbo].[CursoProfesor]  WITH CHECK ADD  CONSTRAINT [FK_CursoProfesor_Profesor] FOREIGN KEY([ProfesorId])
+REFERENCES [dbo].[Profesor] ([ProfesorId])
+GO
+
+ALTER TABLE [dbo].[CursoProfesor] CHECK CONSTRAINT [FK_CursoProfesor_Profesor]
+GO
+
